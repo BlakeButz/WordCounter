@@ -1,0 +1,48 @@
+Blake Butz bwb22
+Analysis of Algorithmic Complexity
+
+1. Reading the input set:
+   - Complexity: O(N)
+   - Explanation: The input is read character by character until the end of the 
+		  file is reached. This operation has a linear time complexity 
+		  proportional to the size of the input, denoted by N.
+
+2. Storing the characters / words / numbers:
+   - Complexity: O(N)
+   - Explanation: Each character, word, and number encountered in the input is 
+		  stored in unordered maps. Inserting an element
+		  into an unordered map has an average time complexity of O(1). 
+		  Since each character, word, and number is processed once, the 
+		  overall time complexity is O(N), where N is the size of the input.
+
+3. Setting tracking values:
+   - Complexity: O(1)
+   - Explanation: Each time a new character, word, or number is encountered, its 
+		  frequency and priority are updated in the corresponding unordered map. 
+		  Since accessing and updating elements in an unordered map has an average 
+		  time complexity of O(1), setting the tracking values also has a constant 
+		  time complexity.
+
+4. Looking up the final tracking info:
+   - Complexity: O(N log N)
+   - Explanation: After storing the frequencies and priorities in unordered maps, 
+		  they are sorted based on frequency and priority to determine the 
+		  top ten most frequent elements. Sorting a vector of pairs has a 
+		  time complexity of O(N log N), where N is the number of elements 
+		  in the vector.
+
+5. Deciding on (and accessing for output) the "Top Ten" list:
+   - Complexity: O(1) for accessing and outputting top elements
+   - Explanation: Accessing and outputting the top ten elements from the sorted vectors 
+		  has a constant time complexity since the vectors are already sorted. 
+		  Each element is accessed directly without needing any additional operations, 
+		  resulting in a constant time complexity.
+
+
+6. Other important algorithms/tasks:
+   - Converting words to lowercase: O(M), where M is the length of the word being converted.
+
+Overall, the program's complexity is dominated by the linear time complexity of reading the input 
+and counting characters, words, and numbers. Sorting the frequencies to determine the top ten most 
+frequent elements adds additional complexity but is relatively minor compared to the overall 
+processing of the input.
